@@ -1,7 +1,7 @@
 from django.conf.urls import url
 from . import views
 from django.urls import path, re_path
-
+from django.contrib.auth import views as auth_views
 app_name = 'crm'
 urlpatterns = [
     path('', views.home, name='home'),
@@ -18,5 +18,5 @@ path('product_list', views.product_list, name='product_list'),
 path('product/create/', views.product_new, name='product_new'),
 path('product/<int:pk>/edit/', views.product_edit, name='product_edit'),
 path('product/<int:pk>/delete/', views.product_delete, name='product_delete'),
-
+url('login/',auth_views.LoginView.as_view(), name='login')
 ]
