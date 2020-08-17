@@ -89,6 +89,15 @@ WSGI_APPLICATION = 'mfscrm.wsgi.application'
 # }
 
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'b6464d3d90aeff'
+EMAIL_HOST_PASSWORD = 'de5aa58ea4aea6'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -140,7 +149,6 @@ USE_TZ = True
 
 # STATIC_URL = '/static/'
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
-
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
